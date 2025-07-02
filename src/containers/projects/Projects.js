@@ -4,11 +4,10 @@ import { gql } from "apollo-boost";
 import "./Project.css";
 import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
 import Button from "../../components/button/Button";
-import { openSource } from "../../portfolio";
-import { greeting } from "../../portfolio.js";
+import { openSource, greeting } from "../../portfolio";
 
 export default function Projects() {
-  const [repo, setrepo] = useState([]);
+  const [repo, setRepo] = useState([]);
 
   useEffect(() => {
     getRepoData();
@@ -30,23 +29,24 @@ export default function Projects() {
       .query({
         query: gql`
           {
-            repositoryOwner(login: "${openSource.githubUserName}") {
-              ... on User {
-                pinnedRepositories(first: 6) {
-                  edges {
-                    node {
-                      nameWithOwner
+            user(login: "${openSource.githubUserName}") {
+              pinnedItems(first: 6, types: REPOSITORY) {
+                edges {
+                  node {
+                    ... on Repository {
+                      id
+                      name
                       description
+                      url
                       forkCount
                       stargazers {
                         totalCount
                       }
-                      url
-                      id
-                      diskUsage
-                      primaryLanguage {
-                        name
-                        color
+                      createdAt
+                      languages(first: 5) {
+                        nodes {
+                          name
+                        }
                       }
                     }
                   }
@@ -57,25 +57,23 @@ export default function Projects() {
         `,
       })
       .then((result) => {
-        setrepoFunction(result.data.repositoryOwner.pinnedRepositories.edges);
-        console.log(result);
+        setRepo(result.data.user.pinnedItems.edges);
+      })
+      .catch((error) => {
+        console.error("GitHub API error:", error);
       });
-  }
-
-  function setrepoFunction(array) {
-    setrepo(array);
   }
 
   return (
     <div className="main" id="opensource">
       <h1 className="project-title">Open Source Projects</h1>
       <div className="repo-cards-div-main">
-        {repo.map((v, i) => {
-          return <GithubRepoCard repo={v} key={v.node.id} />;
-        })}
+        {repo.map((edge) => (
+          <GithubRepoCard key={edge.node.id} repo={edge.node} />
+        ))}
       </div>
       <Button
-        text={"More Projects"}
+        text="More Projects"
         className="project-button"
         href={greeting.githubProfile}
         newTab={true}

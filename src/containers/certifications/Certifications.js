@@ -7,6 +7,12 @@ import CertificationCard from "../../components/certificationCard/CertificationC
 class Certifications extends Component {
   render() {
     const theme = this.props.theme;
+
+    // Safety check to avoid errors if data is undefined or empty
+    if (!certifications?.certifications?.length) {
+      return null;
+    }
+
     return (
       <div className="main" id="certs">
         <div className="certs-header-div">
@@ -17,9 +23,9 @@ class Certifications extends Component {
           </Fade>
         </div>
         <div className="certs-body-div">
-          {certifications.certifications.map((cert) => {
-            return <CertificationCard certificate={cert} theme={theme} />;
-          })}
+          {certifications.certifications.map((cert, index) => (
+            <CertificationCard key={index} certificate={cert} theme={theme} />
+          ))}
         </div>
       </div>
     );

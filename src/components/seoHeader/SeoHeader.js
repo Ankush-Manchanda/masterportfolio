@@ -20,13 +20,21 @@ function SeoHeader() {
       sameAs.push(media.link);
     });
 
-  let mail = socialMediaLinks
-    .find((media) => media.link.startsWith("mailto"))
-    .link.substring("mailto:".length);
-  let job = experience.sections
-    ?.find((section) => section.work)
-    ?.experiences?.at(0);
+  let mail =
+    socialMediaLinks
+      .find((media) => media.link.startsWith("mailto"))
+      ?.link?.substring("mailto:".length) || "";
 
+  // ✅ Safely get a job title — fallback to first internship
+  let jobSection = experience.sections.find(
+    (section) => section.experiences && section.experiences.length > 0
+  );
+  let job = jobSection?.experiences?.[0] || {
+    title: "AI Enthusiast",
+    company: "Personal Projects",
+  };
+
+  // Generate credential schema
   let credentials = [];
   certifications.certifications.forEach((certification) => {
     credentials.push({
@@ -37,6 +45,7 @@ function SeoHeader() {
       description: certification.subtitle,
     });
   });
+
   const data = {
     "@context": "https://schema.org/",
     "@type": "Person",
@@ -56,10 +65,11 @@ function SeoHeader() {
       addressRegion: contactPageData.addressSection?.region,
       addressCountry: contactPageData.addressSection?.country,
       postalCode: contactPageData.addressSection?.postalCode,
-      streetAddress: contactPageData.addressSection?.streetAddress,
+      streetAddress: contactPageData.addressSection?.streetAddress || "",
     },
     hasCredential: credentials,
   };
+
   return (
     <Helmet>
       <title>{seo.title}</title>

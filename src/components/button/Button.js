@@ -14,12 +14,16 @@ const onMouseOut = (event, color, bgColor) => {
 };
 
 export default function Button({ text, className, href, newTab, theme }) {
+  const target = newTab ? "_blank" : "_self";
+  const rel = newTab ? "noopener noreferrer" : "";
+
   return (
     <div className={className}>
       <a
         className="main-button"
         href={href}
-        target={newTab && "_blank"}
+        target={target}
+        rel={rel}
         style={{
           color: theme.body,
           backgroundColor: theme.text,

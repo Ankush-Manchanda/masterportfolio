@@ -1,41 +1,27 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./Splash.css";
 import { Redirect } from "react-router-dom";
 import LoaderLogo from "../../components/Loader/LoaderLogo.js";
 
-function AnimatedSplash(props) {
+function AnimatedSplash({ theme }) {
   return (
     <div className="logo_wrapper">
-      <div className="screen" style={{ backgroundColor: props.theme.splashBg }}>
-        <LoaderLogo id="logo" theme={props.theme} />
+      <div className="screen" style={{ backgroundColor: theme.splashBg }}>
+        <LoaderLogo id="logo" theme={theme} />
       </div>
     </div>
   );
 }
 
-class Splash extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      redirect: false,
-    };
-  }
+const Splash = ({ theme }) => {
+  const [redirect, setRedirect] = useState(false);
 
-  componentDidMount() {
-    this.id = setTimeout(() => this.setState({ redirect: true }), 5500);
-  }
+  useEffect(() => {
+    const timer = setTimeout(() => setRedirect(true), 5500);
+    return () => clearTimeout(timer); // Clean up the timeout on unmount
+  }, []);
 
-  componentWillMount() {
-    clearTimeout(this.id);
-  }
-
-  render() {
-    return this.state.redirect ? (
-      <Redirect to="/home" />
-    ) : (
-      <AnimatedSplash theme={this.props.theme} />
-    );
-  }
-}
+  return redirect ? <Redirect to="/home" /> : <AnimatedSplash theme={theme} />;
+};
 
 export default Splash;

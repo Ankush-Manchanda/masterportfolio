@@ -6,9 +6,10 @@ import OrganizationsData from "../../shared/opensource/organizations.json";
 
 class Organizations extends Component {
   render() {
-    const theme = this.props.theme;
+    const { theme } = this.props;
+
     return (
-      <div id="organizations">
+      <div className="main" id="organizations">
         <div className="organizations-header-div">
           <Fade bottom duration={2000} distance="20px">
             <h1 className="organizations-header" style={{ color: theme.text }}>
@@ -16,7 +17,7 @@ class Organizations extends Component {
             </h1>
           </Fade>
         </div>
-        <OrganizationList logos={OrganizationsData["data"]} />
+        <OrganizationList logos={OrganizationsData["data"]} theme={theme} />
       </div>
     );
   }

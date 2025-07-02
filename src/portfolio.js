@@ -2,7 +2,7 @@
 
 // Website related settings
 const settings = {
-  isSplash: true,
+  isSplash: false,
 };
 
 // SEO Related settings
@@ -20,10 +20,10 @@ const seo = {
 // Home Page
 const greeting = {
   title: "Ankush Manchanda",
-  logo_name: "AnkushManchanda",
-  nickname: "ankush_codes",
+  logo_name: "AnkushManchanda\n",
+  nickname: "ankush_codes\n",
   subTitle:
-    "B.Tech CSE (AI & ML) student passionate about real-time analytics, AI projects, and full-stack web development.",
+    "\nB.Tech CSE (AI & ML) student passionate about real-time analytics, AI projects, and full-stack web development.",
   resumeLink:
     "https://drive.google.com/file/d/17KEmqhGjSNzYb71yhncScvo0ffIcgSf4/view?usp=drive_link",
   portfolio_repository: "https://github.com/ankush-manchanda",
@@ -219,7 +219,8 @@ const experience = {
         {
           title: "Retail Store Analytics",
           company: "Personal Project",
-          company_url: "https://ankush-manchanda.github.io/retail-store-analysis.github.io/",
+          company_url:
+            "https://ankush-manchanda.github.io/retail-store-analysis.github.io/",
           logo_path: "yolo_logo.png",
           duration: "2024",
           location: "GitHub",
@@ -232,6 +233,14 @@ const experience = {
   ],
 };
 
+// Projects Page Header
+const projectsHeader = {
+  title: "Projects",
+  description:
+    "Here are some of the impactful projects I've built. These reflect my interests in AI, analytics, and web development.",
+  avatar_image_path: "projects_image.svg",
+};
+
 // Contact Page
 const contactPageData = {
   contactSection: {
@@ -242,8 +251,7 @@ const contactPageData = {
   },
   blogSection: {
     title: "Portfolio Projects",
-    subtitle:
-      "Explore my work on GitHub and deployed pages.",
+    subtitle: "Explore my work on GitHub and deployed pages.",
     link: "https://ankush-manchanda.github.io/retail-store-analysis.github.io/",
     avatar_image_path: "blogs_image.svg",
   },
@@ -272,4 +280,6 @@ export {
   degrees,
   certifications,
   experience,
+  contactPageData,
+  projectsHeader,
 };

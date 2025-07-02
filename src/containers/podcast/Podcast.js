@@ -4,7 +4,7 @@ import { podcastSection } from "../../portfolio";
 
 export default function Podcast() {
   return (
-    <div className="main">
+    <div className="main" id="podcasts">
       <div className="podcast-header">
         <h1 className="podcast-header-title">{podcastSection.title}</h1>
         <p className="subTitle podcast-header-subtitle">
@@ -12,19 +12,19 @@ export default function Podcast() {
         </p>
       </div>
       <div className="podcast-main-div">
-        {podcastSection.podcast.map((podcastLink) => {
-          return (
-            <div>
-              <iframe
-                title="podcast"
-                className="podcast"
-                src={podcastLink}
-                frameborder="0"
-                scrolling="no"
-              ></iframe>
-            </div>
-          );
-        })}
+        {podcastSection.podcast.map((podcastLink, index) => (
+          <div key={index} className="podcast-iframe-container">
+            <iframe
+              title={`podcast-${index}`}
+              className="podcast"
+              src={podcastLink}
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              scrolling="no"
+            ></iframe>
+          </div>
+        ))}
       </div>
     </div>
   );

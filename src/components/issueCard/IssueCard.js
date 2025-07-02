@@ -5,62 +5,58 @@ import { Fade } from "react-reveal";
 
 class IssueCard extends Component {
   render() {
-    const issue = this.props.issue;
-    var iconPR;
-    var bgColor;
-    if (issue["closed"] === false) {
-      iconPR = {
-        iconifyClass: "octicon:issue-opened",
-        style: { color: "#28a745" },
-      };
-      bgColor = "#dcffe4";
-    } else {
-      iconPR = {
-        iconifyClass: "octicon:issue-closed",
-        style: { color: "#d73a49" },
-      };
-      bgColor = "#ffdce0";
-    }
+    const { issue } = this.props;
+    const {
+      title,
+      url,
+      number,
+      createdAt,
+      closed,
+      repository,
+      assignees,
+    } = issue;
 
-    var subtitleString =
-      "#" + issue["number"] + " opened on " + issue["createdAt"].split("T")[0];
-    var assignee;
-    if (issue["assignees"]["nodes"].length > 0) {
-      const name = issue["assignees"]["nodes"][0]["name"];
-      assignee = (
-        <OverlayTrigger
-          key={name}
-          placement={"top"}
-          style={{ marginBottom: "5px" }}
-          overlay={
-            <Tooltip id={`tooltip-top`}>
-              <strong>{`Assigned to ${name}`}</strong>
-            </Tooltip>
-          }
-        >
-          <a
-            href={issue["assignees"]["nodes"][0]["url"]}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="assigned-to-img"
-              src={issue["assignees"]["nodes"][0]["avatarUrl"]}
-              alt=""
-            />
-          </a>
-        </OverlayTrigger>
-      );
-    } else {
-      assignee = <noscript></noscript>;
-    }
+    const iconPR = closed
+      ? {
+          iconifyClass: "octicon:issue-closed",
+          style: { color: "#d73a49" },
+          bgColor: "#ffdce0",
+        }
+      : {
+          iconifyClass: "octicon:issue-opened",
+          style: { color: "#28a745" },
+          bgColor: "#dcffe4",
+        };
+
+    const subtitleString = `#${number} opened on ${createdAt.split("T")[0]}`;
+
+    const assigneeNode = assignees?.nodes?.[0];
+    const assignee = assigneeNode ? (
+      <OverlayTrigger
+        key={assigneeNode.name}
+        placement="top"
+        overlay={
+          <Tooltip id="tooltip-top">
+            <strong>{`Assigned to ${assigneeNode.name}`}</strong>
+          </Tooltip>
+        }
+      >
+        <a href={assigneeNode.url} target="_blank" rel="noopener noreferrer">
+          <img
+            className="assigned-to-img"
+            src={assigneeNode.avatarUrl}
+            alt={assigneeNode.name}
+          />
+        </a>
+      </OverlayTrigger>
+    ) : null;
 
     return (
       <Fade bottom duration={2000} distance="40px">
         <div
           className="issue-card"
           style={{
-            backgroundColor: bgColor,
+            backgroundColor: iconPR.bgColor,
             border: `1px solid ${iconPR.style.color}`,
           }}
         >
@@ -74,59 +70,40 @@ class IssueCard extends Component {
               ></span>
               <div className="issue-title-header">
                 <p className="issue-title">
-                  <a
-                    href={issue["url"]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {issue["title"]}
+                  <a href={url} target="_blank" rel="noopener noreferrer">
+                    {title}
                   </a>
                 </p>
                 <p className="issue-subtitle">{subtitleString}</p>
               </div>
             </div>
-            {/* <div className="files-changed-header">
-							<p
-								className="files-changed-text"
-								style={{ backgroundColor: iconPR.style.color }}
-							>
-								{pullRequest["changedFiles"]}
-							</p>
-							<p className="files-changed-text-2">Files Changed</p>
-						</div> */}
           </div>
+
           <div className="issue-down">
             <div className="assignee-repo">
               <p className="parent-repo">
                 Repository:{" "}
                 <a
                   style={{ color: iconPR.style.color }}
-                  href={issue["repository"]["url"]}
+                  href={repository.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {issue["repository"]["owner"]["login"]}/
-                  {issue["repository"]["name"]}
+                  {repository.owner.login}/{repository.name}
                 </a>
               </p>
-              <div className="assignee-info">
-                {/* <p className="additions-files">
-									<strong>{pullRequest["additions"]} + </strong>
-								</p>
-								<p className="deletions-files">
-									<strong>{pullRequest["deletions"]} - </strong>
-								</p> */}
-                {assignee}
-              </div>
+              <div className="assignee-info">{assignee}</div>
             </div>
             <div className="owner-img-div">
               <a
-                href={issue["repository"]["owner"]["url"]}
+                href={repository.owner.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
                   className="owner-img"
-                  src={issue["repository"]["owner"]["avatarUrl"]}
-                  alt=""
+                  src={repository.owner.avatarUrl}
+                  alt={`${repository.owner.login} avatar`}
                 />
               </a>
             </div>

@@ -4,15 +4,19 @@ import { Fade } from "react-reveal";
 import { greeting } from "../../portfolio.js";
 /* eslint-disable jsx-a11y/accessible-emoji */
 
-export default function Footer(props) {
+export default function Footer({ theme }) {
   return (
-    <div className="footer-div">
-      <Fade>
-        <p className="footer-text" style={{ color: props.theme.secondaryText }}>
-          Made with <span role="img">❤️</span> by {greeting.title}
+    <footer className="footer-div">
+      <Fade bottom duration={1000} distance="10px">
+        <p className="footer-text" style={{ color: theme.secondaryText }}>
+          Made with{" "}
+          <span role="img" aria-label="heart">
+            ❤️
+          </span>{" "}
+          by {greeting.title}
         </p>
-        {/* <ToggleSwitch theme={props.theme} onToggle={props.onToggle}/> */}
+        {/* <ToggleSwitch theme={theme} onToggle={props.onToggle} /> */}
       </Fade>
-    </div>
+    </footer>
   );
 }

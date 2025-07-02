@@ -6,9 +6,10 @@ import issuesData from "../../shared/opensource/issues.json";
 
 class Issues extends Component {
   render() {
-    const theme = this.props.theme;
+    const { theme } = this.props;
+
     return (
-      <div>
+      <div className="main" id="issues">
         <div className="issues-header-div">
           <Fade bottom duration={2000} distance="20px">
             <h1 className="issues-header" style={{ color: theme.text }}>
@@ -16,10 +17,11 @@ class Issues extends Component {
             </h1>
           </Fade>
         </div>
+
         <div className="issues-body-div">
-          {issuesData["data"].map((issue) => {
-            return <IssueCard issue={issue} />;
-          })}
+          {issuesData?.data?.map((issue, index) => (
+            <IssueCard key={index} issue={issue} theme={theme} />
+          ))}
         </div>
       </div>
     );

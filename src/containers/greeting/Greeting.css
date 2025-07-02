@@ -1,40 +1,43 @@
-.main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
-.greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
-
-.gretting-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-}
-
+/* === Container === */
 .greeting-main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  padding: 20px 10px;
+  margin: 4rem auto 0 auto;
 }
 
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
-}
-.button-greeting-div {
-  display: flex;
-  margin-top: 20px;
+/* === Title Animation === */
+.name-slide-in {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: slideFadeIn 1s ease-out forwards;
 }
 
+/* === Subtitle Animation with Delay === */
+.subtitle-slide-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideFadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* === Keyframes === */
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Text Styles === */
 .greeting-text {
-  margin-top: 80px;
   font-size: 70px;
   line-height: 1.1;
   font-family: "Google Sans Bold";
+  margin-top: 80px;
 }
 
 .greeting-nickname {
@@ -50,12 +53,17 @@
   font-family: "Google Sans Medium";
 }
 
+.button-greeting-div {
+  display: flex;
+  margin-top: 20px;
+}
+
 .greeting-image-div > * {
   max-width: 100%;
   height: auto;
 }
 
-/* Media Query */
+/* === Responsive Styles === */
 @media (max-width: 1380px) {
   .greeting-text {
     font-size: 50px;
@@ -64,32 +72,41 @@
     font-size: 20px;
   }
 }
+
 @media (max-width: 768px) {
-  .button-greeting-div {
-    justify-content: space-around;
+  .greeting-main {
+    display: block;
+    text-align: center;
   }
+
   .greeting-text {
     font-size: 30px;
     margin-top: 0px;
-    text-align: center;
   }
+
   .greeting-nickname {
     font-size: 25px;
-    text-align: center;
   }
+
   .greeting-text-p {
     font-size: 16px;
     margin-right: 0px;
     line-height: normal;
-    text-align: center;
   }
-  .greeting-main {
-    display: block;
+
+  .button-greeting-div {
+    justify-content: space-around;
   }
 
   .portfolio-repo-btn-div {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+  @keyframes slideFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

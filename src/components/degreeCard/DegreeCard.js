@@ -4,8 +4,17 @@ import { Fade, Flip } from "react-reveal";
 
 class DegreeCard extends Component {
   render() {
-    const degree = this.props.degree;
-    const theme = this.props.theme;
+    const { degree, theme } = this.props;
+
+    // Safe image loading
+    let logoSrc;
+    try {
+      logoSrc = require(`../../assets/images/${degree.logo_path}`);
+    } catch (err) {
+      console.warn(`Image not found: ${degree.logo_path}`);
+      logoSrc = "https://via.placeholder.com/150";
+    }
+
     return (
       <div className="degree-card">
         {degree.logo_path && (
@@ -17,8 +26,8 @@ class DegreeCard extends Component {
                   maxHeight: "100%",
                   transform: "scale(0.9)",
                 }}
-                src={require(`../../assets/images/${degree.logo_path}`)}
-                alt={degree.alt_name}
+                src={logoSrc}
+                alt={degree.alt_name || "Degree Logo"}
               />
             </div>
           </Flip>
@@ -47,13 +56,15 @@ class DegreeCard extends Component {
               </div>
             </div>
             <div className="body-content">
-              {degree.descriptions.map((sentence) => {
-                return (
-                  <p className="content-list" style={{ color: theme.text }}>
-                    {sentence}
-                  </p>
-                );
-              })}
+              {degree.descriptions.map((sentence, index) => (
+                <p
+                  key={index}
+                  className="content-list"
+                  style={{ color: theme.text }}
+                >
+                  {sentence}
+                </p>
+              ))}
               {degree.website_link && (
                 <a
                   href={degree.website_link}

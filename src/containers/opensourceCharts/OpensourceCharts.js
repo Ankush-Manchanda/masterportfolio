@@ -6,9 +6,10 @@ import "./OpensourceCharts.css";
 
 class OpensourceCharts extends Component {
   render() {
-    const theme = this.props.theme;
+    const { theme } = this.props;
+
     return (
-      <div className="main-div">
+      <div className="main" id="opensource-charts">
         <div className="os-charts-header-div">
           <Fade bottom duration={2000} distance="20px">
             <h1 className="os-charts-header" style={{ color: theme.text }}>
@@ -17,8 +18,8 @@ class OpensourceCharts extends Component {
           </Fade>
         </div>
         <div className="os-charts-body-div">
-          <PullRequestChart />
-          <IssueChart />
+          <PullRequestChart theme={theme} />
+          <IssueChart theme={theme} />
         </div>
       </div>
     );

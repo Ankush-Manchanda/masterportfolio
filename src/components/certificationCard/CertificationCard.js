@@ -4,8 +4,17 @@ import { Fade } from "react-reveal";
 
 class CertificationCard extends Component {
   render() {
-    const certificate = this.props.certificate;
-    const theme = this.props.theme;
+    const { certificate, theme } = this.props;
+
+    // Safe image loading
+    let logoSrc;
+    try {
+      logoSrc = require(`../../assets/images/${certificate.logo_path}`);
+    } catch (err) {
+      logoSrc = "https://via.placeholder.com/150"; // fallback if image not found
+      console.warn(`Image not found: ${certificate.logo_path}`);
+    }
+
     return (
       <Fade bottom duration={2000} distance="20px">
         <div className="cert-card">
@@ -22,8 +31,8 @@ class CertificationCard extends Component {
               >
                 <img
                   className="logo_img"
-                  src={require(`../../assets/images/${certificate.logo_path}`)}
-                  alt={certificate.alt_name}
+                  src={logoSrc}
+                  alt={certificate.alt_name || "Certificate Logo"}
                 />
               </div>
               <div className="content-details fadeIn-top">
