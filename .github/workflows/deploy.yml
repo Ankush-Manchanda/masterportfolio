@@ -1,33 +1,31 @@
-name: Build and Deploy
+name: Deploy React to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # or your deployment branch
+      - master
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Use Node.js 16
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      - name: Build the app
         run: npm run build
 
-      # Include your deploy step here (e.g., for GitHub Pages)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
           publish_dir: ./build

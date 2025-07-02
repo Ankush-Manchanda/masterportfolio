@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "ankush-codehub",
+  "name": "masterPortfolio",
   "version": "0.1.0",
-  "homepage": "https://ankush-manchanda.github.io/ankush-codehub",
+  "homepage": "https://ankush-manchanda.github.io/masterPortfolio",
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
