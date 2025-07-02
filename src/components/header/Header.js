@@ -27,7 +27,7 @@ class Header extends Component {
             <NavLink to={link} tag={Link} className="logo">
               <span style={{ color: theme.text }}> &lt;</span>
               <span className="logo-name" style={{ color: theme.text }}>
-                {greeting.logo_name}
+                Ankush Manchanda
               </span>
               <span style={{ color: theme.text }}>/&gt;</span>
             </NavLink>
@@ -86,18 +86,6 @@ class Header extends Component {
               </li>
               <li>
                 <NavLink
-                  to="/opensource"
-                  tag={Link}
-                  activeStyle={{ fontWeight: "bold" }}
-                  style={{ color: theme.text }}
-                  onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-                  onMouseOut={(event) => onMouseOut(event)}
-                >
-                  Open Source
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
                   to="/contact"
                   tag={Link}
                   activeStyle={{ fontWeight: "bold" }}
@@ -115,4 +103,5 @@ class Header extends Component {
     );
   }
 }
+
 export default Header;
