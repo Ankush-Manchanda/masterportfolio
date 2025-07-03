@@ -58,9 +58,25 @@ const skills = {
       title: "AI & Data Analytics",
       fileName: "DataScienceImg",
       skills: [
-        "⚡ Real-time object detection using YOLOv8 & OpenCV",
+        "⚡ Real-time object detection using YOLOv8 & OpenCV ",
+        <br />,
+        <br />,
         "⚡ Data analysis and visualization using Python, R, Streamlit",
+        <br />,
+        <br />,
         "⚡ Applied ML for analytics in retail and finance use cases",
+        <br />,
+        <br />,
+        "⚡ Developed an AI-powered retail analytics system using YOLOv8",
+        "and OpenCV for real-time customer tracking and zone-based insights",
+        <br />,
+        <br />,
+        "⚡ Built and hosted projects using GitHub Pages, and managed workflows ",
+        "via GitHub Actions",
+        <br />,
+        <br />,
+        "⚡ Worked with tools like Jupyter Notebook, Google Colab, and VS Code for",
+        "fast prototyping and collaboration",
       ],
       softwareSkills: [
         {
@@ -89,8 +105,29 @@ const skills = {
       title: "Web Development",
       fileName: "FullStackImg",
       skills: [
-        "⚡ Building responsive UIs with HTML, CSS",
-        "⚡ Hosting pages on GitHub and integrating data-driven visualizations",
+        "I design and develop responsive, user-friendly web applications using",
+        " modern technologies. My focus is on performance, clean UI/UX, and functional backend logic.",
+        <br />,
+        <br />,
+        "    What I’ve worked with:",
+        <br />,
+        <br />,
+
+        "⚡ Frontend: HTML, CSS, JavaScript, React.js",
+        <br />,
+        <br />,
+
+        "⚡ Data visualization: Streamlit, Plotly, Matplotlib",
+        <br />,
+        <br />,
+
+        "⚡ Git-based deployment: GitHub Pages, GitHub Actions",
+        <br />,
+        <br />,
+
+        "⚡ Created full-stack apps with real-time data, user interfaces, and analytics dashboards",
+        <br />,
+        <br />,
       ],
       softwareSkills: [
         {
@@ -119,7 +156,7 @@ const degrees = {
     {
       title: "Maharshi Dayanand University",
       subtitle: "B.Tech in Computer Science & Engineering (AI & ML)",
-      logo_path: "mdu_logo.png",
+      logo_path: "mdu.jpeg",
       alt_name: "MDU",
       duration: "2022 - 2026",
       descriptions: [
@@ -147,7 +184,7 @@ const certifications = {
     {
       title: "Software Engineering Virtual Experience",
       subtitle: "- Walmart Global Tech (Forage)",
-      logo_path: "walmart_logo.png",
+      logo_path: "walmart.jpeg",
       certificate_link:
         "https://drive.google.com/file/d/1bgOM3BpKDqgzhAMrCp48jXYuHnFAy2jO/view?usp=drive_link",
       alt_name: "Walmart",
@@ -156,7 +193,7 @@ const certifications = {
     {
       title: "Technology Virtual Internship Program",
       subtitle: "- Citi (Forage)",
-      logo_path: "citi_logo.png",
+      logo_path: "citi.jpeg",
       certificate_link:
         "https://drive.google.com/file/d/175ckRx9gOuNBSLiudXOFWfOCc4JyTvjW/view?usp=drive_link",
       alt_name: "Citi",
@@ -192,7 +229,7 @@ const experience = {
           company: "Walmart Global Tech - Forage",
           company_url:
             "https://www.theforage.com/virtual-internships/prototype/BLBQ8H7tTqBLWqAzJ/Walmart-Global-Tech-Software-Engineering-Virtual-Experience",
-          logo_path: "walmart_logo.png",
+          logo_path: "walmart.jpeg",
           duration: "Jan 2024",
           location: "Virtual",
           description:
@@ -204,7 +241,7 @@ const experience = {
           company: "Citi - Forage",
           company_url:
             "https://www.theforage.com/virtual-internships/prototype/wmrjDty7GYM5tdTnM/Citi-Technology-Virtual-Internship-Program",
-          logo_path: "citi_logo.png",
+          logo_path: "citi.jpeg",
           duration: "Dec 2023",
           location: "Virtual",
           description:
@@ -221,7 +258,7 @@ const experience = {
           company: "Personal Project",
           company_url:
             "https://ankush-manchanda.github.io/retail-store-analysis.github.io/",
-          logo_path: "yolo_logo.png",
+          logo_path: "project.jpeg",
           duration: "2024",
           location: "GitHub",
           description:

@@ -1,27 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./Splash.css";
-import { Redirect } from "react-router-dom";
-import LoaderLogo from "../../components/Loader/LoaderLogo.js";
 
-function AnimatedSplash({ theme }) {
+function Splash() {
+  const history = useHistory();
+
+  useEffect(() => {
+    const timer = setTimeout(() => history.push("/home"), 6000);
+    return () => clearTimeout(timer);
+  }, [history]);
+
   return (
-    <div className="logo_wrapper">
-      <div className="screen" style={{ backgroundColor: theme.splashBg }}>
-        <LoaderLogo id="logo" theme={theme} />
+    <div className="splash-container">
+      <div className="hex-wrapper">
+        <svg className="hex-svg" viewBox="0 0 200 200">
+          {/* Outer Hexagon */}
+          <polygon
+            className="hex hex-outer"
+            points="100,10 173,50 173,130 100,170 27,130 27,50"
+          />
+          {/* Inner Hexagon (scaled down slightly) */}
+          <polygon
+            className="hex hex-inner"
+            points="100,10 173,50 173,130 100,170 27,130 27,50"
+            transform="translate(15, 8)"
+          />
+        </svg>
+
+        <div className="am-text">AM</div>
       </div>
+      <div className="splash-name">Ankush Manchanda</div>
     </div>
   );
 }
-
-const Splash = ({ theme }) => {
-  const [redirect, setRedirect] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setRedirect(true), 5500);
-    return () => clearTimeout(timer); // Clean up the timeout on unmount
-  }, []);
-
-  return redirect ? <Redirect to="/home" /> : <AnimatedSplash theme={theme} />;
-};
 
 export default Splash;

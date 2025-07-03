@@ -1,58 +1,96 @@
-.logo_wrapper {
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-}
-
-.screen {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  background-color: #0a1d4d;
+  overflow: auto;
+}
+
+.splash-container {
+  height: 100vh;
+  background-color: #0a1d4d;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-.screen {
-  /* background-color: #55198b; */
-  overflow: hidden;
-  border-radius: 100%;
-  animation: grow 5.5s forwards;
+.hex-wrapper {
+  position: relative;
+  width: 500px;
+  height: 500px;
 }
 
-@keyframes grow {
+.hex-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Common hexagon styles */
+.hex {
+  position: relative;
+  top: 90%;
+  left: 75%;
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawHex 2.5s ease forwards;
+}
+
+.hex-inner {
+  stroke-width: 3;
+  animation: drawHexReverse 2.5s ease forwards;
+}
+
+/* Hexagon animation clockwise */
+@keyframes drawHex {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Inner hexagon animation counter-clockwise */
+@keyframes drawHexReverse {
   0% {
-    transform: scale(0);
-  }
-  10% {
-    transform: scale(1);
-    border-radius: 0%;
-    height: 100%;
-    width: 100%;
-  }
-  90% {
-    transform: scale(1);
-    border-radius: 0%;
-    height: 100%;
-    width: 100%;
+    stroke-dashoffset: -600;
   }
   100% {
-    transform: scale(0);
-    transform-origin: 50% 50%;
-    border-radius: 100%;
+    stroke-dashoffset: 0;
   }
 }
 
-#logo {
+.am-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 45%;
+  left: 24%;
   transform: translate(-50%, -50%);
+  font-size: 10rem;
+  font-family: "tigreal free outline";
+  font-weight: 700;
+  color: white;
+  opacity: 0;
+  animation: fadeInText 2.5s ease forwards;
+  animation-delay: 0s;
+}
+
+.splash-name {
+  font-size: 6rem;
+  font-family: "Agustina Regular";
+  color: white;
+  margin-top: 2.5rem;
+  opacity: 0;
+  animation: fadeInText 2.5s ease forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

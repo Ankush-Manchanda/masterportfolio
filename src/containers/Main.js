@@ -7,8 +7,8 @@ import Experience from "../pages/experience/Experience";
 import Opensource from "../pages/opensource/Opensource";
 import Contact from "../pages/contact/ContactComponent";
 import Projects from "../pages/projects/Projects";
-import Error404 from "../pages/errors/error404/Error";
 import { settings } from "../portfolio.js";
+import { Redirect } from "react-router-dom";
 
 class Main extends Component {
   render() {
@@ -61,10 +61,7 @@ class Main extends Component {
           )}
 
           {/* 404 fallback route */}
-          <Route
-            path="*"
-            render={(props) => <Error404 {...props} theme={theme} />}
-          />
+          <Route path="*" render={() => <Redirect to="#/home" />} />
         </Switch>
       </BrowserRouter>
     );
