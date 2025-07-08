@@ -3,7 +3,7 @@
     {
       "id": "proj-001",
       "name": "Retail Store Analytics",
-      "createdAt": "2025-06-20T00:00:00Z",
+      "createdAt": "06-2025",
       "url": "https://github.com/Ankush-Manchanda/retail-store-analytics", 
       "description": "📊 Real-time object detection-based retail analytics system using YOLOv8 for customer footfall, zone tracking, and actionable insights.",
       "isFork": false,
@@ -25,7 +25,7 @@
     {
       "id": "proj-002",
       "name": "Inclusive_Web",
-      "createdAt": "2025-06-25T00:00:00Z",
+      "createdAt": "07-2025",
       "url": "https://github.com/Ankush-Manchanda/inclusive_web", 
       "description": "🌐 A Streamlit-based accessibility web app with features like text-to-speech, speech-to-text (subtitles), and live language translation for the differently abled.",
       "isFork": false,
