@@ -29,7 +29,7 @@ class Main extends Component {
             }
           />
           <Route
-            path="/home"
+            path="#/home"
             render={(props) => <Home {...props} theme={theme} />}
           />
           <Route

@@ -3,7 +3,7 @@ name: 🚀 Deploy React Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - master  # or 'main' if you're using main
+      - main  # or 'main' if you're using main
 
 permissions:
   contents: write
