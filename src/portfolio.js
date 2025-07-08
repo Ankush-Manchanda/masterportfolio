@@ -259,12 +259,22 @@ const experience = {
           company_url:
             "https://ankush-manchanda.github.io/retail-store-analysis.github.io/",
           logo_path: "project.jpeg",
-          duration: "2024",
+          duration: "June-2025",
           location: "GitHub",
           description:
             "Built using YOLOv8, Streamlit, and OpenCV to detect footfall, analyze zone heatmaps, and visualize customer activity in real time.",
           color: "#00C853",
         },
+        {
+          title: "Inclusive Web",
+          company: "Hackathon Project",
+          company_url: "https://ankush-manchanda.github.io/inclusive_web",
+          logo_path: "inclusive_web.jpeg", 
+          duration: "July-2025",
+          location: "Streamlit & GitHub",
+          description:
+            "An accessibility-focused web app with real-time subtitle generation, text-to-speech, and multilingual translation features for the hearing/speech impaired. Built using Streamlit, Google TTS, OpenCV, and Whisper.",
+          color: "#FF6F00",},
       ],
     },
   ],
