@@ -6,7 +6,7 @@ function Splash() {
   const history = useHistory();
 
   useEffect(() => {
-    const timer = setTimeout(() => history.push("#/home"), 6000);
+    const timer = setTimeout(() => history.push("/home"), 6000);
     return () => clearTimeout(timer);
   }, [history]);
 

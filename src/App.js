@@ -21,7 +21,7 @@ function App() {
             </Route>
 
             {/* Main portfolio */}
-            <Route path="#/home">
+            <Route path="/home">
               <Main theme={chosenTheme} />
             </Route>
 
