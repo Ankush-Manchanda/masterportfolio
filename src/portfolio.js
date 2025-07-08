@@ -13,7 +13,7 @@ const seo = {
   og: {
     title: "Ankush Manchanda Portfolio",
     type: "website",
-    url: "https://ankush-manchanda.github.io/masterportfolio",
+    url: "https://ankush-manchanda.github.io/",
   },
 };
 
