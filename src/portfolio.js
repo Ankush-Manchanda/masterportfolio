@@ -218,7 +218,7 @@ const experience = {
           company: "IBM SkillsBuild + CSRBOX",
           company_url: "https://csrbox.org/IBM-SkillsBuild",
           logo_path: "ibm_logo.png",
-          duration: "Feb 2024 - Apr 2024",
+          duration: "July 2024 - August 2024",
           location: "Remote",
           description:
             "Trained on AI foundations, problem-solving with data, and analytics using Python and IBM tools. Completed use-case based projects on business decision-making.",
@@ -230,7 +230,7 @@ const experience = {
           company_url:
             "https://www.theforage.com/virtual-internships/prototype/BLBQ8H7tTqBLWqAzJ/Walmart-Global-Tech-Software-Engineering-Virtual-Experience",
           logo_path: "walmart.jpeg",
-          duration: "Jan 2024",
+          duration: "Feb 2025",
           location: "Virtual",
           description:
             "Gained exposure to backend and frontend systems at scale. Solved real-world tech problems in a simulated development environment.",
@@ -242,7 +242,7 @@ const experience = {
           company_url:
             "https://www.theforage.com/virtual-internships/prototype/wmrjDty7GYM5tdTnM/Citi-Technology-Virtual-Internship-Program",
           logo_path: "citi.jpeg",
-          duration: "Dec 2023",
+          duration: "Feb 2025",
           location: "Virtual",
           description:
             "Worked on fintech-related technology modules including APIs, security, and digital client engagement solutions.",
