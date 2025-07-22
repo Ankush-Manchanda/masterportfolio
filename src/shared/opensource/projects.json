@@ -25,7 +25,7 @@
     {
       "id": "proj-002",
       "name": "Inclusive_Web",
-      "createdAt": "07-2025",
+      "createdAt": "06-2025",
       "url": "https://ankush-manchanda.github.io/inclusive_web/", 
       "description": "🌐 A Streamlit-based accessibility web app with features like text-to-speech, speech-to-text (subtitles), and live language translation for the differently abled.",
       "isFork": false,
