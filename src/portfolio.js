@@ -270,11 +270,45 @@ const experience = {
           company: "Hackathon Project",
           company_url: "https://ankush-manchanda.github.io/inclusive_web",
           logo_path: "inclusive_web.jpeg", 
-          duration: "July-2025",
+          duration: "June-2025",
           location: "Streamlit & GitHub",
           description:
             "An accessibility-focused web app with real-time subtitle generation, text-to-speech, and multilingual translation features for the hearing/speech impaired. Built using Streamlit, Google TTS, OpenCV, and Whisper.",
-          color: "#FF6F00",},
+          color: "#FF6F00",
+        },
+        {
+          title: "News Video Generator",
+          company: "Personal Project",
+          company_url: "https://ankush-manchanda.github.io/news-video-generator",
+          logo_path: "news_gen.png",
+          duration: "July-2025",
+          location: "GitHub",
+          description:
+            "Automated video generation pipeline using NLP and MoviePy. Scrapes trending news, summarizes content, and generates videos with AI voiceovers and visuals.",
+          color: "#2962FF",
+        },
+        {
+          title: "SEO Blog Tool",
+          company: "Personal Project",
+          company_url: "https://ankush-manchanda.github.io/seo-blog-tool",
+          logo_path: "seo_tool.png",
+          duration: "July-2025",
+          location: "GitHub",
+          description:
+            "Creates SEO-optimized blog posts by scraping e-commerce product data and generating content using OpenAI’s GPT API.",
+          color: "#00BFA5",
+        },
+        {
+          title: "Business to Tech (Requirement Analyzer)",
+          company: "Personal Project",
+          company_url: "https://ankush-manchanda.github.io/business_to_tech",
+          logo_path: "biz_to_tech.jpeg",
+          duration: "July-2025",
+          location: "GitHub",
+          description:
+            "Streamlit-based AI tool that converts high-level business requirements into technical components like module breakdowns, database schema, and pseudocode.",
+          color: "#6200EA",
+        }
       ],
     },
   ],

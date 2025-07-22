@@ -43,6 +43,72 @@
           "iconifyClass": "logos-google-cloud"
         }
       ]
+    },
+    {
+      "id": "proj-003",
+      "name": "News Video Generator",
+      "createdAt": "07-2025",
+      "url": "https://ankush-manchanda.github.io/news-video-generator",
+      "description": "🗞️ AI-powered tool that scrapes trending news, summarizes it using NLP, and auto-generates short videos with text-to-speech and animations.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "MoviePy",
+          "iconifyClass": "simple-icons:moviepy"
+        },
+        {
+          "name": "Transformers",
+          "iconifyClass": "simple-icons:transformers"
+        }
+      ]
+    },
+    {
+      "id": "proj-004",
+      "name": "SEO Blog Tool",
+      "createdAt": "07-2025",
+      "url": "https://ankush-manchanda.github.io/seo-blog-tool",
+      "description": "✍️ Generates SEO-optimized blog posts from product names by scraping data, simplifying titles, and using GPT to write content.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "BeautifulSoup",
+          "iconifyClass": "simple-icons:beautifulsoup"
+        },
+        {
+          "name": "OpenAI",
+          "iconifyClass": "simple-icons:openai"
+        }
+      ]
+    },
+    {
+      "id": "proj-005",
+      "name": "Business to Tech (Requirement Analyzer)",
+      "createdAt": "07-2025",
+      "url": "https://ankush-manchanda.github.io/business_to_tech",
+      "description": "🔍 Converts high-level business requirements into technical modules, database schemas, and pseudocode using AI-powered analysis.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos-python"
+        },
+        {
+          "name": "Streamlit",
+          "iconifyClass": "simple-icons:streamlit"
+        },
+        {
+          "name": "OpenRouter.ai",
+          "iconifyClass": "simple-icons:OpenRouter.ai"
+        }
+      ]
     }
   ]
 }
