@@ -21,7 +21,7 @@ const seo = {
 const greeting = {
   title: "Ankush Manchanda",
   logo_name: "AnkushManchanda\n",
-  nickname: "ankush_codes\n",
+  nickname: "ankush_cs\n",
   subTitle:
     "\nB.Tech CSE (AI & ML) student passionate about real-time analytics, AI projects, and web development.",
   resumeLink:
