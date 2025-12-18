@@ -21,11 +21,9 @@ const seo = {
 const greeting = {
   title: "Ankush Manchanda",
   logo_name: "AnkushManchanda\n",
-  nickname: "ankush_cs\n",
-  subTitle:
-    "\nB.Tech CSE (AI & ML) student passionate about real-time analytics, AI projects, and web development.",
-  resumeLink:
-    "https://drive.google.com/file/d/1Vjv2UU4ecsGXf-sgrXzBlS0m0OfOdaTZ/view?usp=drive_link",
+  nickname: "ankush_codes\n",
+  subTitle: "\nB.Tech CSE (AI & ML) student passionate about real-time analytics, AI projects, and web development.",
+  resumeLink: "https://drive.google.com/file/d/1Vjv2UU4ecsGXf-sgrXzBlS0m0OfOdaTZ/view?usp=drive_link",
   portfolio_repository: "https://github.com/ankush-manchanda",
   githubProfile: "https://github.com/ankush-manchanda",
 };
