@@ -23,7 +23,7 @@ const greeting = {
   logo_name: "AnkushManchanda\n",
   nickname: "ankush_codes\n",
   subTitle:
-    "\nB.Tech CSE (AI & ML) student passionate about real-time analytics, AI projects, and full-stack web development.",
+    "\nB.Tech CSE (AI & ML) student passionate about real-time analytics, AI projects, and web development.",
   resumeLink:
     "https://drive.google.com/file/d/1Vjv2UU4ecsGXf-sgrXzBlS0m0OfOdaTZ/view?usp=drive_link",
   portfolio_repository: "https://github.com/ankush-manchanda",
@@ -113,7 +113,7 @@ const skills = {
         <br />,
         <br />,
 
-        "⚡ Frontend: HTML, CSS, JavaScript, React.js",
+        "⚡ Frontend: HTML, CSS",
         <br />,
         <br />,
 
@@ -125,7 +125,7 @@ const skills = {
         <br />,
         <br />,
 
-        "⚡ Created full-stack apps with real-time data, user interfaces, and analytics dashboards",
+        "⚡ Created websites with real-time data, user interfaces, and analytics dashboards",
         <br />,
         <br />,
       ],
