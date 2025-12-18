@@ -25,10 +25,10 @@ export default function Greeting(props) {
                 className="greeting-text-p subTitle"
                 style={{ color: theme.secondaryText }}
               >
-                A passionate Full Stack Developer and Computer Vision enthusiast
+                Data Analyst skilled in Python, Pandas, and SQL
                 🚀
                 <br />
-                with experience building Web and AI-powered applications.
+                with experience creating dashboards and analytics-driven applications.
               </p>
               <br />
               <SocialMedia theme={theme} />
